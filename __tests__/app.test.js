@@ -3,7 +3,7 @@ const pool = require('../lib/utils/pool');
 const request = require('supertest');
 const app = require('../lib/app');
 const tweets = require('../lib/pipeline/producer');
-const { tweetData, store } = require('../lib/pipeline/tweet-worker');
+//const { tweetData, store } = require('../lib/pipeline/tweet-worker');
 
 describe('newz-flash routes', () => {
   console.log(tweets);
@@ -13,8 +13,6 @@ describe('newz-flash routes', () => {
 
   it('tweet-worker should do it\'s job', async() => {
     await tweetData(tweets);
-
-    await store();
 
     const query = pool.query('SELECT * FROM tweets');
 
