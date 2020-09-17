@@ -1,0 +1,8 @@
+DROP TABLES IF EXISTS tweets;
+CREATE TABLE tweets(
+  id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+  username TEXT NOT NULL,
+  content TEXT NOT NULL, 
+  hashtag TEXT, 
+  date TEXT NOT NULL
+);
