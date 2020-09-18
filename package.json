@@ -7,7 +7,9 @@
     "test": "jest --verbose --runInBand --testLocationInResults --setupFiles dotenv/config",
     "test:watch": "npm run test -- --watch",
     "start": "node -r dotenv/config server.js",
-    "start:watch": "nodemon -r dotenv/config server.js"
+    "start:watch": "nodemon -r dotenv/config server.js",
+    "producer": "node -r dotenv/config lib/pipeline/producer.js",
+    "consumer": "node -r dotenv/config lib/pipeline/consumer.js"
   },
   "jest": {
     "testEnvironment": "node"
