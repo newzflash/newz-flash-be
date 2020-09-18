@@ -23,5 +23,7 @@ describe('newz-flash routes', () => {
     expect(rows[0]).not.toBeUndefined();
 
   });
-
+  afterAll(() => {
+    pool.end;
+  });
 });
