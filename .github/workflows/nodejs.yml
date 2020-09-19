@@ -23,5 +23,5 @@ jobs:
     - run: npm test
       env:
         CI: true
-        DATABASE_URL: postgres://alchemy:alchemy@postgres:5432/alchemy
-        REDIS_URL: redis://redis:6379
+        DATABASE_URL: postgres://jerudmoyer:postgres@localhost:5432/postgres
+        REDIS_URL: redis://default:sXmCkHd1utvPe9yXK99WRu954e6qho0x@redis-15078.c1.us-west-2-2.ec2.cloud.redislabs.com:1507
