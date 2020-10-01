@@ -4,7 +4,7 @@ const request = require('supertest');
 const app = require('../lib/app');
 const tweets = require('../lib/pipeline/producer');
 const Email = require('../lib/models/emails');
-const { emailQueue } = require('../lib/pipeline/queue');
+const { emailQueue, taskQueue } = require('../lib/pipeline/queue');
 //const { tweetData, store } = require('../lib/pipeline/tweet-worker');
 
 describe('newz-flash routes', () => {
@@ -24,8 +24,9 @@ describe('newz-flash routes', () => {
     expect(rows[0]).not.toBeUndefined();
 
   });
-  afterAll(() => {
-    pool.end;
-    emailQueue.close();
+  afterAll(async() => {
+    
+    await emailQueue.close();
+    await taskQueue.close();
   });
 });
